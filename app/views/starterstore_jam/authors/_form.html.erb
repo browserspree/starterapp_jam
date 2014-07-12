@@ -1,0 +1,4 @@
+<%= f.input :name, as: :name %>
+<%= f.input :bio, as: :text_editor %>
+<%= f.association :books %>
+<%= f.association :categories, collection: Cms::Category.of_type("Gender") %>
