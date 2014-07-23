@@ -3,3 +3,4 @@
 <%= f.input :description, as: :text_editor %>
 <%= f.association :authors %>
 <%= f.association :categories, collection: Cms::Category.of_type("Genre") %>
+<%= f.input :quantity_left %>

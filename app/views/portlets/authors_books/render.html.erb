@@ -1,5 +1,10 @@
 <ul>
-  <% @author.each do |book| %>
-    <li><%=h author.name %></li>
-  <% end %>
+
+<%= @author.name %><br />
+
+Books: 
+<% @books.each do |book| %>
+<%= book.name %>
+<% end %>
+
 </ul>

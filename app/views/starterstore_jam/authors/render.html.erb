@@ -1,5 +1,12 @@
 <dl>
     <dt>Name:</dt><dd><%= show :name %></dd>
     <dt>Bio:</dt><dd><%= show :bio %></dd>
-    
+   
+ 
+Books: 
+<% @content_block.books.each do |book| %>
+<%= link_to(book.name, main_app.book_slug_path(slug: book.slug)) %>
+<% end %>
 </dl>
+
+

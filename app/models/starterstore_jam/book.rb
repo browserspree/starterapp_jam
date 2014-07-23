@@ -11,7 +11,13 @@ module StarterstoreJam
 	before_validation :set_slug
 
  	def set_slug
- 	self.slug = name.to_slug unless name.blank?
+ 		self.slug = name.to_slug unless name.blank?
 	end
+
+
+	def in_stock?
+		quantity_left > 0
+	end
+  
   end
 end

@@ -13,5 +13,7 @@ module StarterstoreJam
 	def set_slug
  	 	self.slug = name.to_slug unless name.blank?
 	end
+
+	
   end
 end

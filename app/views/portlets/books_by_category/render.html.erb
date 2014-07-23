@@ -1,0 +1,9 @@
+<%=h @portlet.name %>
+
+
+<%= @category.name %><br />
+
+<br />
+<% @books.each do |book| %>
+<%= book.name %><br />
+<% end %>

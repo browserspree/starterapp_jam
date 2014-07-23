@@ -1,0 +1,6 @@
+<%=h @portlet.name %>
+
+ <% @categories.each do |category| %> <br />
+<%= link_to category.name, "/books-by-category?category_id=#{category.id}" %>
+
+<% end %>

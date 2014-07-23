@@ -1,6 +1,36 @@
 <dl>
+Hello World!
     <dt>Name:</dt><dd><%= show :name %></dd>
     <dt>Price:</dt><dd><%= show :price %></dd>
-        <dt>Description:</dt><dd><%= show :description %></dd>
-    
+    <dt>Description:</dt><dd><%= show :description %></dd>
+
+<dt>Category:</dd>
+<% @content_block.categories.each do |category| %>
+<%= category.name %>
+<% end %>
+   
+<dt>In Stock: <%= @content_block.in_stock? %></dd>
+
+<dt>Author: 
+<% @content_block.authors.each do |author| %>
+<%= link_to(author.name, main_app.author_slug_path(slug: author.slug)) %>
+<% end %>
+
+
+<dt>Recommended Books for </dd>
+
+<% @content_block.categories.each do |category| %>
+	<%= category.name %>: <br /> 
+
+	<% @books = StarterstoreJam::Book.joins(:categories).where(cms_categories: {id: category.id}) %>
+	<% @books.each do |book| %>
+		<%= link_to(book.name, main_app.book_slug_path(slug: book.slug)) %> <br />
+	<% end %>
+<% end %>
+
+
+
 </dl>
+
+
+
